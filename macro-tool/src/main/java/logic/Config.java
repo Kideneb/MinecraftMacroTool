@@ -1,3 +1,4 @@
+package logic;
 
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
@@ -155,9 +156,6 @@ public class Config {
 	
 	
 
-	public Config() {
-		// TODO Auto-generated constructor stub
-	}
 	public static void readConfig() {
 			try {
 				BufferedReader in = new BufferedReader(new FileReader(Macro.WORKING_DIR + "config.txt"));
@@ -204,7 +202,7 @@ public class Config {
 						case "right":
 							var = keyCodesHash.get(Integer.parseInt(l.substring(l.indexOf(":") + 1)));
 							rightKey = var;
-							System.out.println(rightKey);
+							System.out.println("Right mouse code: " + rightKey);
 							break;
 						case "jump":
 							var = keyCodesHash.get(Integer.parseInt(l.substring(l.indexOf(":") + 1)));
@@ -217,7 +215,7 @@ public class Config {
 						case "sprint":
 							var = keyCodesHash.get(Integer.parseInt(l.substring(l.indexOf(":") + 1)));
 							sprintKey = var;
-							System.out.println(var);
+							System.out.println("Sprint key code: " + var);
 							break;
 						default:
 							break;
@@ -230,13 +228,12 @@ public class Config {
 				 Helper helper = new Helper();
 				 mouseSensitivity = helper.convertmouseSensitivity(mouseSensitivityPercent);
 			 }
-			 System.out.println(mouseSensitivity);
+			 System.out.println("Mouse sensitivity: " + mouseSensitivity);
 			 Macro.currentXPixels = Main.calcFullX();
 				
 			} catch (FileNotFoundException e) {
 				CommandHelper.printError("The config file could not be found in the directory. Default state will be applied.");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

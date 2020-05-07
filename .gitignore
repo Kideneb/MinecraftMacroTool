@@ -25,6 +25,8 @@ hs_err_pid*
 
 #IntelliJ
 .idea/
+*.iml
 
 #Maven
 macro-tool/target/
+dependency-reduced-pom.xml

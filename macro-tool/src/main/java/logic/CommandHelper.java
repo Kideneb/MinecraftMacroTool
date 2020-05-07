@@ -1,3 +1,5 @@
+package logic;
+
 import java.io.IOException;
 
 public class CommandHelper {
@@ -46,7 +48,7 @@ public class CommandHelper {
 										break;
 									case "help":
 										printMessage("Syntax: help [commands|'command']");
-										printMessage("\"help\" gives basic information about the usage of the Macro Parkour Tool.");
+										printMessage("\"help\" gives basic information about the usage of the logic.Macro Parkour Tool.");
 										printMessage("\"help commands\" lists all commands and their syntax.");
 										printMessage("\"help 'command'\" gives a detailed description of the command.\"");
 										printMessage("Examples: \"help\", \"help commands\", \"help start\"");
@@ -59,7 +61,7 @@ public class CommandHelper {
 										printMessage("Syntax: start <'file'> ['numberOfTicks']");
 										printMessage("\"start 'file'\" begins executing the macro file.");
 										printMessage("\"start 'file' 'numberOfTicks'\" opens the macro file after the specified amount of ticks.");
-										printMessage("The file got to be in the same directory as the Macro Parkour Tool.");
+										printMessage("The file got to be in the same directory as the logic.Macro Parkour Tool.");
 										printMessage("You also have to specify the file type with the corresponding filename extension.");
 										printMessage("Examples: \"start hard_jump.txt\", \"start double_triple_neo.txt 40\"");
 										break;

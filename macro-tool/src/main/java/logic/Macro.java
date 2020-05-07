@@ -1,3 +1,5 @@
+package logic;
+
 import java.io.*;
 import java.util.Vector;
 
@@ -38,7 +40,7 @@ public class Macro {
 		this.file = name;
 		currentMacros.add(this);
 		allOutputsClosed = false;
-		//currentMacros.forEach((Macro macro) -> System.out.println(macro.getFilename()));
+		//currentMacros.forEach((logic.Macro macro) -> System.out.println(macro.getFilename()));
 		
 			try {
 				this.userInput = new BufferedReader(new FileReader(WORKING_DIR + this.getFile()));
@@ -57,7 +59,7 @@ public class Macro {
 		
 	}
 	
-	void readLine() {
+	public void readLine() {
 		//System.out.println(this.file);
 		this.line++;		
 		try {

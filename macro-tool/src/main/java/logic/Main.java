@@ -1,3 +1,5 @@
+package logic;
+
 import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -6,13 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 
-import main.java.ext.GlobalKeyListener;
-import main.java.ui.JConsole;
+import ext.GlobalKeyListener;
+import ui.JConsole;
 
 public abstract class Main {
 	
 	static public String versionName = "Macro Parkour Tool 0.1.2";
-	static public String versionDate = "2018-09-19";
+	static public String versionDate = "2020-05-07";
 	
 	static long millis;
 	static String[] args;
@@ -36,8 +38,8 @@ public abstract class Main {
 				ch.listen();
 				if(Macro.currentMacros.size() != 0) {
 					try {
-						Macro.currentMacros.forEach((Macro m) -> mac.add(m));
-						mac.forEach((Macro m) -> m.readLine());
+                        mac.addAll(Macro.currentMacros);
+						mac.forEach(Macro::readLine);
 						mac.clear();
 					} catch (ConcurrentModificationException e1) {}
 					
@@ -74,7 +76,7 @@ public abstract class Main {
 		for (int i = 0; i < 9; i++) {
 			if (Macro.pressIterations[i] > -1) {
 				Macro.pressIterations[i]--;
-				//System.out.println(Helper.outputKey[i]);
+				//System.out.println(logic.Helper.outputKey[i]);
 				if (Helper.outputKey[i] < 1000) {
 					if (Macro.pressIterations[i] > -1) {
 						robot.keyPress(Helper.outputKey[i]);
@@ -97,7 +99,7 @@ public abstract class Main {
 			
 			int deltaX = fullX - Macro.currentXPixels;
 			Macro.currentXPixels = fullX;
-			//System.out.println(Macro.currentXPixels);
+			//System.out.println(logic.Macro.currentXPixels);
 			//System.out.println(fullX);
 			//System.out.println(deltaX);
 			
@@ -113,7 +115,7 @@ public abstract class Main {
 			
 			int deltaY = fullY - Macro.currentXPixels;
 			Macro.currentXPixels = fullY;
-			//System.out.println(Macro.currentXPixels);
+			//System.out.println(logic.Macro.currentXPixels);
 			//System.out.println(fullX);
 			//System.out.println(deltaX);
 			
@@ -146,7 +148,7 @@ public abstract class Main {
 			
 	}
 	public static void sleepTillTick() {
-		//System.out.println(Arrays.toString(Macro.pressIterations));				
+		//System.out.println(Arrays.toString(logic.Macro.pressIterations));
 		//System.out.println(50 - (System.currentTimeMillis() - millis));
 		
 		if (50 - (System.currentTimeMillis() - millis) > 0) {

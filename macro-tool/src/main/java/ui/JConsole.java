@@ -17,9 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import main.java.CommandHelper;
-import main.java.Main;
-import main.java.ext.TextAreaOutputStream;
+import logic.CommandHelper;
+import logic.Main;
+import ext.TextAreaOutputStream;
 
 public class JConsole extends JFrame {
 	
