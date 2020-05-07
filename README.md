@@ -1,6 +1,4 @@
 # MinecraftMacroTool
-2020-05-07
-Version 0.1.2
 
 The tool is an external unofficial tool for the game Minecraft, which allows the implementation of movement macros.
 Those macros can include movements which are humanly impossible.
