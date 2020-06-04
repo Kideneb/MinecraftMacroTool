@@ -168,7 +168,7 @@ public class Config {
 				} catch (NumberFormatException e) {}
 				in.close();
 				
-				 String optPath = dir.substring(dir.indexOf(':') + 1) + File.separator + "\\options.txt";
+				 String optPath = dir.substring(dir.indexOf(':') + 1) + File.separator + "options.txt";
 				in = new  BufferedReader(new FileReader(optPath));
 				while (in.ready()) {
 					int var;
